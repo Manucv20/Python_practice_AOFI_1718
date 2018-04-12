@@ -1,19 +1,24 @@
 #Creo e inicializo las variables
-x = 0
-y = 0
-z = 0
-
+x = 1
+y = 1
+z = 1
 #Pregunto tres números
-x = int(input("Dime un número mayor que 0:\n"))
-if x > 0:
-	y = int(input ("Dime ahora un número mayor que el anterior:\n"))
-	if y > x:
-		z = int(input ("Dime ahora otro número pero que sea menor que 0:\n"))
-		if z < 0:
-			print(x, " + ", y, " + ", z, "=",x + y + z)
-		else:
+while x > 0:
+	x = int(input("Dime un número mayor que 0:\n"))
+	while x > 0:
+		y = int(input ("Dime ahora un número mayor que el anterior:\n"))
+		while y > x:
+			z = int(input ("Dime ahora otro número pero que sea menor que 0:\n"))
+			while z < 0:
+				#Creo la operacion 
+				print(x, " + ", y, " + ", z, "=",x + y + z)
+				break			
+			else:
+				print ("Error")
+		else:	
 			print ("Error")
-	else:	
+	else:
+		#Cambiamos la variable a 1 para que el bucle se pueda ejecutar (línea 8)
 		print ("Error")
-else:
-	print ("Error")
+		x = 1
+
